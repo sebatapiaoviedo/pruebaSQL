@@ -252,11 +252,12 @@ prueba=#
 
     - ¿Que cliente realizó la compra más cara?
 
-        prueba=# SELECT cliente.nombre_cliente, factura.precio_total FROM cliente INNER JOIN factura ON cliente.id_cliente = factura.id_cliente ORDER BY factura.precio_total DESC LIMIT 1;
-        nombre_cliente | precio_total 
-        ----------------+--------------
-        Javiera        | 900
+        prueba=# SELECT nombre_cliente, cliente.id_cliente FROM cliente INNER JOIN factura ON cliente.id_cliente = factura.id_cliente ORDER BY precio_total DESC LIMIT 1;
+        nombre_cliente | id_cliente 
+        ----------------+------------
+        Javiera        |          2
         (1 row)
+
 
     - ¿Que cliente pagó sobre 100 de monto?
 
