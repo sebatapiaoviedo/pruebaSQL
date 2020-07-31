@@ -247,3 +247,39 @@ prueba=#
             prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
             prueba-# VALUES ('10', '6', '1', '200', '200');
             INSERT 0 1
+
+- parte 3
+
+    - ¿Que cliente realizó la compra más cara?
+
+        prueba=# SELECT cliente.nombre_cliente, factura.precio_total FROM cliente INNER JOIN factura ON cliente.id_cliente = factura.id_cliente ORDER BY factura.precio_total DESC LIMIT 1;
+        nombre_cliente | precio_total 
+        ----------------+--------------
+        Javiera        | 900
+        (1 row)
+
+    - ¿Que cliente pagó sobre 100 de monto?
+
+        prueba=# SELECT cliente.nombre_cliente, factura.precio_total FROM cliente INNER JOIN factura ON cliente.id_cliente = factura.id_cliente WHERE  factura.precio_total > '100';
+        nombre_cliente | precio_total 
+        ----------------+--------------
+        Sebastián      | 1700
+        Sebastián      | 1800
+        Javiera        | 900
+        Javiera        | 1100
+        Javiera        | 1900
+        Jenny          | 600
+        Eduardo        | 800
+        Eduardo        | 1400
+        Eduardo        | 2200
+        Eduardo        | 200
+        (10 rows)
+
+    - ¿Cuantos clientes han comprado el producto 6.
+
+        prueba=# SELECT nombre_cliente, cliente.id_cliente FROM cliente INNER JOIN factura ON cliente.id_cliente = factura.id_cliente INNER JOIN detalle_factura ON factura.número_factura = detalle_factura.número_factura WHERE detalle_factura.id_producto = '6';
+        nombre_cliente | id_cliente 
+        ----------------+------------
+        Javiera        |          2
+        Eduardo        |          4
+        (2 rows)
