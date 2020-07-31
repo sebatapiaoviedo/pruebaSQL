@@ -107,3 +107,143 @@ prueba=# INSERT INTO producto (nombre_producto, descripción_producto, precio_un
 prueba-# VALUES ('pan masa madre', 'de hamburguesa', '600', '3');
 INSERT 0 1
 prueba=# 
+
+- 10 facturas
+
+    - 2 para el cliente 1, con 2 y 3 productos
+
+        - cliente 1 con 2 productos 
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('01-02-2020', '1700', '1');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('1', '2', '1', '1000', '1000');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('1', '3', '1', '700', '700');
+            INSERT 0 1
+
+        - cliente 1 con 3 productos
+    
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('02-02-2020', '1800', '1');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('2', '2', '1', '1000', '1000');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('2', '3', '1', '700', '700');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('2', '4', '1', '100', '100');
+            INSERT 0 1
+
+    - 3 para el cliente 2, con 3, 2 y 3 productos
+
+        - cliente 2 con 3 productos 
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('03-02-2020', '900', '2');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('3', '5', '1', '400', '400');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('3', '6', '1', '200', '200');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('3', '7', '1', '300', '300');
+            INSERT 0 1
+
+        - cliente 2 con 2 productos
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('04-02-2020', '1100', '2');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('4', '8', '1', '500', '500');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('4', '9', '1', '600', '600');
+            INSERT 0 1
+
+        - cliente 2 con 3 productos
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('05-02-2020', '1900', '2');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('5', '2', '1', '1000', '1000');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('5', '5', '1', '400', '400');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('5', '8', '1', '500', '500');
+            INSERT 0 1
+
+    - 1 para el cliente 3, con 1 producto
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('06-02-2020', '600', '3');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('6', '9', '1', '600', '600');
+            INSERT 0 1
+
+    - 4 para el cliente 4, con 2, 3, 4 y 1 producto
+
+        - cliente 4 con 2 productos 
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('07-02-2020', '800', '4');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('7', '7', '1', '300', '300');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('7', '8', '1', '500', '500');
+            INSERT 0 1
+        
+        - cliente 4 con 3 productos
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('08-02-2020', '1400', '4');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('8', '7', '1', '300', '300');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('8', '8', '1', '500', '500');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('8', '9', '1', '600', '600');
+            INSERT 0 1
+
+        - cliente 4 con 4 productos
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('09-02-2020', '2200', '4');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('9', '2', '1', '1000', '1000');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('9', '3', '1', '700', '700');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('9', '4', '1', '100', '100');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('9', '5', '1', '400', '400');
+            INSERT 0 1
+
+        - cliente 4 con 1 producto
+
+            prueba=# INSERT INTO factura (fecha_factura, precio_total, id_cliente)
+            prueba-# VALUES ('10-02-2020', '200', '4');
+            INSERT 0 1
+            prueba=# INSERT INTO detalle_factura (número_factura, id_producto, cantidad_producto, precio_unitario, valor_total_producto)
+            prueba-# VALUES ('10', '6', '1', '200', '200');
+            INSERT 0 1
